@@ -1,11 +1,17 @@
 
-const express = require('express');
+import express from 'express';
+
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); 
 
-app.get('/', (req, res) => {
-  res.json({ mensaje: 'my first API' });
+app.get('/api', (req, res) => {
+  res.send('Recibida solicitud GET en /api');
+});
+
+app.post('/api/:id', (req, res) => {
+  const { id } = req.params;  
+  res.send('Recibida solicitud POST en /api/' + id );
 });
 
 app.listen(3000, () => {
