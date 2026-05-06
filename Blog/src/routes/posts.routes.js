@@ -4,7 +4,7 @@ import {createPost, getPost, getAllAutorPosts} from '../controllers/posts.contro
 const router = express.Router();
 
 // Rutas GET
-router.get('/posts', getPost);
+router.get('/posts/:idPost', getPost);
 router.get('/posts/:idAutor', getAllAutorPosts);
 
 // Rutas POST
