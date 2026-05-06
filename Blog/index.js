@@ -1,19 +1,8 @@
+// Arranque del Servidor
+import app from './src/app.js';
 
-import express from 'express';
+const PORT = process.env.PORT || 3000; // si no se encuentra la variable de entorno PORT, se usará el puerto 3000 por defecto
 
-const app = express();
-
-app.use(express.json()); 
-
-app.get('/api', (req, res) => {
-  res.send('Recibida solicitud GET en /api');
-});
-
-app.post('/api/:id', (req, res) => {
-  const { id } = req.params;  
-  res.send('Recibida solicitud POST en /api/' + id );
-});
-
-app.listen(3000, () => {
-  console.log('Servidor corriendo en http://localhost:3000');
+app.listen(PORT, () => {
+  console.log('Servidor corriendo en http://localhost:' + PORT);
 });
