@@ -8,6 +8,6 @@ router.get('/posts/:idPost', getPost);
 router.get('/posts/:idAutor', getAllAutorPosts);
 
 // Rutas POST
-router.post('/posts/:idAutor', createPost);
+router.post('/posts', createPost);
 
 export default router;

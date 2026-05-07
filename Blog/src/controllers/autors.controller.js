@@ -29,7 +29,7 @@ export const createAutor = async (req, res, next) => {
 
 export const getAutor = async (req, res, next) => {
   try {
-    const autor = await Autor.findByPk(req.query.id);
+    const autor = await Autor.findByPk(req.params.id);
     console.log(autor);
     if (!autor){
       return res.status(httpStatus.NOT_FOUND).json({ error: 'Autor no encontrado' });
