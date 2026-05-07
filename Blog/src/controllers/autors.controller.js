@@ -1,5 +1,5 @@
 
-import Autor from '../models/autors.model.js';
+import { Autor } from '../models/index.model.js';
 import { httpStatus } from '../config/httpStatus.config.js';
 
 export const createAutor = async (req, res, next) => {
