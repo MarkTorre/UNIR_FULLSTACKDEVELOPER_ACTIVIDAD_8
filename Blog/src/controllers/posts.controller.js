@@ -28,8 +28,7 @@ export const createPost = async (req, res, next) => {
 
 export const getPost = async (req, res, next) => {
     try {
-    // Obtenemos el post por su id
-
+    // Obtenemos el post por su id y juntamos la información del autor utilizando la asociación definida en el modelo
     const postWithAutor = await Post.findByPk(req.params.id, {
         attributes: {exclude: ['fk_autors']},
         include: {
@@ -52,5 +51,19 @@ export const getPost = async (req, res, next) => {
 }
 
 export const getPostsByAutor = async (req, res, next) => {
-    res.send('get All Autor Posts de la base de datos');
+    try {
+        // Obtenemos todos los posts de un autor específico
+        const posts = await Post.findAll({
+            where: { fk_autors: req.params.id },
+        });
+
+        // Informamos si no existe ningún post del autor
+        if (!posts.length){
+            return res.status(httpStatus.NOT_FOUND).json({ error: 'El autor no tiene ningún post' });
+        }
+
+        res.status(httpStatus.OK).json(posts);
+    } catch (error) {
+        next(error);
+    }
 }
