@@ -10,4 +10,5 @@ router.get('/posts/autor/:id', getPostsByAutor);
 // Rutas POST
 router.post('/posts', createPost);
 
+
 export default router;

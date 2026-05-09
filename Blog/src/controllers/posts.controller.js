@@ -1,4 +1,4 @@
-import {Autor, Post} from '../models/index.model.js';
+import { Autor, Post } from '../models/index.model.js';
 import { httpStatus } from '../config/httpStatus.config.js';
 
 export const createPost = async (req, res, next) => {

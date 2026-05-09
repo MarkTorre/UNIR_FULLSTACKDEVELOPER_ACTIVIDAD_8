@@ -7,7 +7,8 @@ export const createAutor = async (req, res, next) => {
         // Obtenemos los datos del cuerpo de la solicitud
         const { name, email, image } = req.body;
 
-        // Validamos que se hayan proporcionado todos los campos necesarios
+        // Validamos que se hayan proporcionado 
+        // todos los campos necesarios
         if (!name || !email || !image) {
             return res.status(httpStatus.BAD_REQUEST).json({ error: 'Todos los campos son obligatorios' });
         }
