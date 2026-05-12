@@ -1,0 +1,24 @@
+info:
+  name: createPost
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/api/posts
+  body:
+    type: json
+    data: |-
+      {
+        "title":"El Gran Dios Pan",
+        "description": "El gran dios Pan (en inglés: The Great God Pan) es una novela escrita por el autor galés Arthur Machen. En ella se narra la historia de Clarke, que presencia un inusual experimento en el que su conocido, el Dr. Raymond, utiliza a una joven para conocer la parte oculta de la realidad. Tras esto, comienza a investigar la relación entre varias muertes en extrañas circunstancias acontecidas en la Inglaterra victoriana.",
+        "category": "Terror",
+        "fk_autors": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

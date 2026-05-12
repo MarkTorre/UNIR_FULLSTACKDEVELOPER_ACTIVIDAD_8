@@ -1,0 +1,6 @@
+# Node Js
+Blog/node_modules/
+Blog/package-lock.json
+
+# Environment variables
+Blog/.env
