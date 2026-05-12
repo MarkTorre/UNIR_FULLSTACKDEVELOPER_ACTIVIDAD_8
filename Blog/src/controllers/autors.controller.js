@@ -6,7 +6,7 @@ export const createAutor = async (req, res, next) => {
     try {
         // Obtenemos los datos del cuerpo de la solicitud
         const { name, email, image } = req.body;
-
+  
         // Validamos que se hayan proporcionado 
         // todos los campos necesarios
         if (!name || !email || !image) {
